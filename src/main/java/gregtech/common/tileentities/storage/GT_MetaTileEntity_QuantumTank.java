@@ -30,20 +30,22 @@ public class GT_MetaTileEntity_QuantumTank extends GT_MetaTileEntity_DigitalTank
         if (mFluid == null) {
             return new String[] {
                 EnumChatFormatting.BLUE + "Quantum Tank" + EnumChatFormatting.RESET,
-                "Stored Fluid:",
+                "Current Capacity:",
+                EnumChatFormatting.YELLOW + GT_Utility.formatNumbers(getCapacity()) + " L" + EnumChatFormatting.RESET,
+                "Fluid Name:",
                 EnumChatFormatting.GOLD + "No Fluid" + EnumChatFormatting.RESET,
-                EnumChatFormatting.GREEN + Integer.toString(0) + " L" + EnumChatFormatting.RESET + " "
-                        + EnumChatFormatting.YELLOW + GT_Utility.formatNumbers(getCapacity()) + " L"
-                        + EnumChatFormatting.RESET
+                "Current Used:",
+                EnumChatFormatting.GREEN + Integer.toString(0) + " L" + EnumChatFormatting.RESET
             };
         }
         return new String[] {
             EnumChatFormatting.BLUE + "Quantum Tank" + EnumChatFormatting.RESET,
-            "Stored Fluid:",
+            "Current Capacity:",
+            EnumChatFormatting.YELLOW + GT_Utility.formatNumbers(getCapacity()) + " L" + EnumChatFormatting.RESET,
+            "Fluid Name:",
             EnumChatFormatting.GOLD + mFluid.getLocalizedName() + EnumChatFormatting.RESET,
-            EnumChatFormatting.GREEN + GT_Utility.formatNumbers(mFluid.amount) + " L" + EnumChatFormatting.RESET + " "
-                    + EnumChatFormatting.YELLOW + GT_Utility.formatNumbers(getCapacity()) + " L"
-                    + EnumChatFormatting.RESET
+            "Current Used:",
+            EnumChatFormatting.GREEN + GT_Utility.formatNumbers(mFluid.amount) + " L" + EnumChatFormatting.RESET
         };
     }
 }
